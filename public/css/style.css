@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #FEFAFF;
+    padding: 10px;
+}
+
+main {
+    width: 50vw;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+#display {
+    margin: 10px;
+    background-color: #F0EEF0;
+    border: 3px solid #E5E3E5;
+    border-radius: 10px;
+    position: relative;
+    width: 100%;
+    height: 75vh;
+}
+
+#upload {
+    position: absolute;
+    top: calc(50% - 25px);
+    left: calc(50% - 100px);
+}
+
+#remove {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    font-size: 27px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    width: max-content;
+    box-shadow: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+#remove ion-icon {
+    margin: 0;
+}
+
+#remove:hover {
+    color: #c00;
+    transform: translateY(-1px);
+}
+
+#img-display {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s;
+}
+
+button {
+    background-color: #5FB9E8;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    font-size: 20px;
+    padding: 7px;
+    cursor: pointer;
+    box-shadow: 0 5px 11px 0 #a3a3a3;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+    background-color: #8AD3FA;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 13px 0 #a3a3a3;
+}
+
+#submit {
+    display: block;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+input {
+    display: none;
+}
+
+ion-icon {
+    transform: scale(1.25);
+    margin-right: 5px;
+}
+
+ion-icon, ion-icon + span {
+    vertical-align: middle;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,13 +1,27 @@
 <h1>Chop</h1>
 
-<form  method="post" action="/chop" enctype="multipart/form-data">
-  <label for="img">Upload Image</label>
-  <input type="file" name="img" id="img" />
-</form>
-
 <div id="display">
-  <img alt="uploaded image" src="" />
+  <div id="img-display"></div>
   <div id="lines"></div>
+
+  <button id="upload">
+    <label for="img-upload">
+      <ion-icon name="image-outline"></ion-icon>
+      <span>Upload Image</span>
+    </label>
+  </button>
+
+  <button id="remove" class="hidden"><ion-icon name="close-circle-outline"></ion-icon></button>
 </div>
 
+<form  method="post" action="/chop" enctype="multipart/form-data">
+  <input type="file" name="img" id="img-upload" />
+
+  <button type="submit" id="submit">
+    <ion-icon name="cut-outline"></ion-icon>
+    <span>Split Image</span>
+  </button>
+</form>
+
 <script src="/js/upload.js"></script>
+<script src="/js/remove.js"></script>
