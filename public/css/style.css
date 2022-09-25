@@ -50,7 +50,6 @@ h1 {
     position: absolute;
     top: 1px;
     left: 1px;
-    content: '';
     background-color: #8AD3FAbb;
     width: calc(100% / 3 - 2px);
     height: calc(100% - 2px);
@@ -106,6 +105,45 @@ h1 {
     transition: background-image 0.3s;
 }
 
+#active-line, #lines > div {
+    background-color: #0a0;
+    position: absolute;
+    transition: color 0.3s, width 0.3s, height 0.3s, transform 0.3s;
+}
+
+#lines > div {
+    background-color: #0f0;
+}
+
+#active-line.horizontal, #lines > div.horizontal {
+    height: 3px;
+    width: 100%;
+}
+
+#active-line.vertical, #lines > div.vertical {
+    height: 100%;
+    width: 3px;
+}
+
+#active-line.erase {
+    display: none;
+}
+
+#active-line.erase ~ #lines > div:hover {
+    background-color: #f00;
+    cursor: pointer;
+}
+
+#active-line.erase ~ #lines > .horizontal:hover {
+    height: 10px;
+    transform: translateY(-5px);
+}
+
+#active-line.erase ~ #lines > .vertical:hover {
+    width: 10px;
+    transform: translateX(-5px);
+}
+
 button {
     background-color: #5FB9E8;
     text-align: center;
@@ -113,7 +151,6 @@ button {
     border-radius: 5px;
     width: 200px;
     font-size: 20px;
-    padding: 7px;
     cursor: pointer;
     box-shadow: 0 5px 11px 0 #a3a3a3;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -126,11 +163,13 @@ button:hover {
 }
 
 #submit {
+    padding: 7px;
     display: block;
     margin: 20px auto;
 }
 
 label {
+    padding: 7px;
     display: block;
     width: 100%;
     height: 100%;
