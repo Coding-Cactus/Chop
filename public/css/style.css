@@ -55,6 +55,7 @@ h1 {
     width: calc(100% / 3 - 2px);
     height: calc(100% - 2px);
     border-radius: 7px;
+    transition: left 0.3s;
 }
 
 #display {
