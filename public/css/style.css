@@ -24,6 +24,39 @@ h1 {
     text-align: center;
 }
 
+#controls {
+    position: relative;
+    background-color: #F0EEF0;
+    border-radius: 10px;
+    border: 2px solid #E5E3E5;
+    margin: 10px;
+    width: 100%;
+}
+
+#options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#options > div {
+    text-align: center;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 17px;
+    z-index: 1;
+}
+
+#slider {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    content: '';
+    background-color: #8AD3FAbb;
+    width: calc(100% / 3 - 2px);
+    height: calc(100% - 2px);
+    border-radius: 7px;
+}
+
 #display {
     margin: 10px;
     background-color: #F0EEF0;
