@@ -6,7 +6,23 @@
         if (document.querySelector("#remove").classList.contains("hidden")) return;
 
         const dims = img.getBoundingClientRect();
-        if (e.clientX >= dims.left && e.clientX <= dims.right && e.clientY >= dims.top && e.clientY <= dims.bottom) {
+
+        const ratio = img.naturalWidth / img.naturalHeight;
+        let width = img.height * ratio;
+        let height = img.height;
+
+        if (width > img.width) {
+            width = img.width;
+            height = img.width/ratio;
+        }
+
+        const dx = (img.width - width) / 2;
+        const dy = (img.height - height) / 2;
+
+        if (
+            e.clientX >= dims.left + dx  && e.clientX <= dims.right - dx &&
+            e.clientY >= dims.top + dy && e.clientY <= dims.bottom - dy
+        ) {
             if (activeLine.classList.contains("hidden")) {
                 activeLine.classList.remove("hidden");
             }

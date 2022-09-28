@@ -65,6 +65,7 @@ h1 {
     position: relative;
     width: 100%;
     height: 75vh;
+    padding: 10px;
 }
 
 #upload {
@@ -84,6 +85,7 @@ h1 {
     width: max-content;
     box-shadow: none;
     transition: transform 0.3s, color 0.3s;
+    z-index: 10;
 }
 
 #remove ion-icon {
@@ -99,10 +101,12 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 0.3s;
+    object-fit: contain;
+}
+
+canvas {
+    position: absolute;
+    border-radius: 3px;
 }
 
 #active-line, #lines > div {
