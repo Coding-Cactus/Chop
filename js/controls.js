@@ -13,6 +13,9 @@
                 if (c !== "hidden") activeLine.classList.remove(c);
             });
             activeLine.classList.add(option.id);
+
+            activeLine.style.width = "";
+            activeLine.style.height = "";
         });
     });
 }

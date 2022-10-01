@@ -39,7 +39,7 @@
     </div>
 
     <div id="display">
-      <img alt="uploaded image" src="" id="img-display" class="hidden" />
+      <img alt="uploaded image" src="" id="img-display" class="hidden" draggable="false" />
       <div id="result"></div>
 
       <div id="active-line" class="hidden horizontal"></div>
@@ -55,7 +55,7 @@
       <button id="remove" class="hidden"><ion-icon name="trash-outline"></ion-icon></button>
     </div>
 
-    <input type="file" name="img" id="img-upload" />
+    <input type="file" name="img" id="img-upload" accept="image/jpeg,image/gif,image/png,application/pdf" />
 
     <button id="submit">
       <ion-icon name="cut-outline"></ion-icon>
@@ -63,13 +63,15 @@
     </button>
   </main>
 
+  <script src="https://unpkg.com/merge-images"></script>
+  <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
   <script src="/js/chop.js"></script>
   <script src="/js/upload.js"></script>
   <script src="/js/remove.js"></script>
   <script src="/js/controls.js"></script>
   <script src="/js/move_line.js"></script>
   <script src="/js/place_line.js"></script>
-
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 </body>
 </html>
