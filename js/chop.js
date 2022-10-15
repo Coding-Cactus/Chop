@@ -13,17 +13,16 @@
             let hCount = 0;
             let boundingY = 0;
 
-            const styles = window.getComputedStyle(display, null);
-            const paddingLeft = parseInt(styles.getPropertyValue("padding-left").slice(0, -2));
-            const paddingTop  = parseInt(styles.getPropertyValue("padding-top").slice(0, -2));
-
             const width = uploaded.offsetWidth;
             const height = uploaded.offsetHeight;
 
-            let dx = (display.offsetWidth - width) / 2 - paddingLeft;
-            let dy = (display.offsetHeight - height) / 2 - paddingTop;
+            let dx = (display.clientWidth - width) / 2
+            let dy = (display.clientHeight - height) / 2;
 
-            if (dy < 0) dy = paddingTop;
+            if (dy < 0) {
+                const styles = window.getComputedStyle(display, null);
+                dy = parseInt(styles.getPropertyValue("padding-top").slice(0, -2));
+            }
 
             const horizontals = Array.from(document.querySelectorAll("#lines .horizontal"));
 
@@ -82,6 +81,7 @@
 
             uploaded.classList.add("hidden");
             document.querySelector("#lines").classList.add("hidden");
+            document.querySelector("#copy").classList.remove("hidden");
         };
     });
 }

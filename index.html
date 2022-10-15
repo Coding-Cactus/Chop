@@ -14,32 +14,34 @@
     <div id="controls">
       <div id="options">
         <div id="horizontal">
-        <span>
-          <ion-icon name="swap-horizontal-outline"></ion-icon>
-          <span>Horizontal</span>
-        </span>
+          <span>
+            <ion-icon name="swap-horizontal-outline"></ion-icon>
+            <span>Horizontal</span>
+          </span>
         </div>
 
         <div id="vertical">
-        <span>
-          <ion-icon name="swap-vertical-outline"></ion-icon>
-          <span>Vertical</span>
-        </span>
+          <span>
+            <ion-icon name="swap-vertical-outline"></ion-icon>
+            <span>Vertical</span>
+          </span>
         </div>
 
         <div id="erase">
-        <span>
-          <ion-icon name="close-circle-outline"></ion-icon>
-          <span>Erase</span>
-        </span>
+          <span>
+            <ion-icon name="close-circle-outline"></ion-icon>
+            <span>Erase</span>
+          </span>
         </div>
       </div>
 
       <div id="slider"></div>
     </div>
 
-    <div id="display">
-      <img alt="uploaded image" src="" id="img-display" class="hidden" draggable="false" />
+    <div id="display"><!--
+      --><img alt="uploaded image" src="" id="img-display" class="hidden" draggable="false" /><!--
+      --><span id="helper"></span>
+
       <div id="result"></div>
 
       <div id="active-line" class="hidden horizontal"></div>
@@ -53,6 +55,7 @@
       </button>
 
       <button id="remove" class="hidden"><ion-icon name="trash-outline"></ion-icon></button>
+      <button id="copy" class="hidden"><ion-icon name="copy-outline"></ion-icon></button>
     </div>
 
     <input type="file" name="img" id="img-upload" accept="image/jpeg,image/gif,image/png,application/pdf" />
@@ -61,12 +64,16 @@
       <ion-icon name="cut-outline"></ion-icon>
       <span>Chop Image</span>
     </button>
+
+    <div id="images"></div>
   </main>
+
 
   <script src="//mozilla.github.io/pdf.js/build/pdf.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 
   <script src="/js/chop.js"></script>
+  <script src="/js/copy.js"></script>
   <script src="/js/upload.js"></script>
   <script src="/js/remove.js"></script>
   <script src="/js/controls.js"></script>

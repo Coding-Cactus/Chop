@@ -8,20 +8,19 @@
 
         const dims = img.getBoundingClientRect();
 
-        const styles = window.getComputedStyle(display, null);
-        const paddingLeft = parseInt(styles.getPropertyValue("padding-left").slice(0, -2));
-        const paddingTop  = parseInt(styles.getPropertyValue("padding-top").slice(0, -2));
-
         const leftEdge = dims.left;
         const topEdge = dims.top;
 
         const width = img.offsetWidth;
         const height = img.offsetHeight;
 
-        let dx = (display.offsetWidth - width) / 2 - paddingLeft;
-        let dy = (display.offsetHeight - height) / 2 - paddingTop;
+        let dx = (display.clientWidth - width) / 2;
+        let dy = (display.clientHeight - height) / 2;
 
-        if (dy < 0) dy = paddingTop;
+        if (dy < 0) {
+            const styles = window.getComputedStyle(display, null);
+            dy = parseInt(styles.getPropertyValue("padding-top").slice(0, -2));
+        }
 
         if (
             e.clientX < leftEdge || e.clientX > leftEdge + width ||

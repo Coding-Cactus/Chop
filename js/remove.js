@@ -6,6 +6,7 @@
         document.querySelector("#remove").classList.add("hidden");
         document.querySelector("#upload").classList.remove("hidden");
         document.querySelector("#active-line").classList.add("hidden");
+        document.querySelector("#copy").classList.add("hidden");
         document.querySelector("#lines").innerHTML = "";
         document.querySelector("#result").innerHTML = "";
     });

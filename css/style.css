@@ -67,6 +67,7 @@ h1 {
     height: 75vh;
     padding: 10px;
     overflow: auto;
+    text-align: center;
 }
 
 #upload {
@@ -75,22 +76,32 @@ h1 {
     left: calc(50% - 100px);
 }
 
-#remove {
+#remove, #copy {
     position: absolute;
-    top: 0;
-    right: 6px;
+    top: 6px;
     font-size: 27px;
-    padding: 0;
+    padding: 5px 8px;
     margin: 0;
-    background-color: transparent;
     width: max-content;
     box-shadow: none;
     transition: transform 0.3s, color 0.3s;
     z-index: 10;
+    background-color: #ffffffaa;
+    border-radius: 3px;
 }
 
-#remove ion-icon {
+#remove {
+    left: 6px;
+}
+
+
+#copy {
+    right: 6px;
+}
+
+#remove ion-icon, #copy ion-icon {
     margin: 0;
+    transform: translateY(-3px) scale(1.25);
 }
 
 #remove:hover {
@@ -98,12 +109,31 @@ h1 {
     transform: translateY(-1px);
 }
 
+#copy:hover {
+    color: #5FB9E8;
+    transform: translateY(-1px);
+}
+
+#helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
 #img-display {
-    display: block;
     max-width: 100%;
     border-radius: 10px;
     margin: 0 auto;
     user-select: none;
+    vertical-align: middle;
+}
+
+#images {
+    white-space: nowrap;
+}
+
+#images img {
+    display: inline-block;
 }
 
 canvas {
