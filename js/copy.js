@@ -4,7 +4,7 @@
 
         let previous;
 
-        document.querySelectorAll("canvas").forEach(canvas => {
+        document.querySelectorAll("canvas:not(.hidden)").forEach(canvas => {
             const img = document.createElement("img");
 
             if (previous !== canvas.style.top) {

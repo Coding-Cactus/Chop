@@ -65,12 +65,31 @@
                         canvas.width, canvas.height
                     );
 
-                    canvas.style.left = `${dx + boundingX + vCount * margin}px`;
-                    canvas.style.top = `${dy + boundingY + hCount * margin}px`;
-                    canvas.style.width = `${relativeWidth - (verticals.length - 1) * margin}px`;
-                    canvas.style.height = `${relativeHeight - (horizontals.length - 1) * margin}px`;
+                    const container = document.createElement("div");
 
-                    document.querySelector("#result").appendChild(canvas);
+                    container.style.left   = `${dx + boundingX + vCount * margin}px`;
+                    container.style.top    = `${dy + boundingY + hCount * margin}px`;
+                    container.style.width  = `${relativeWidth - (verticals.length - 1) * margin}px`;
+                    container.style.height = `${relativeHeight - (horizontals.length - 1) * margin}px`;
+
+                    const button = document.createElement("button");
+                    button.innerHTML = "<ion-icon name=\"close-circle-outline\"></ion-icon>"
+                    button.classList.add("delete");
+
+                    button.addEventListener("click", () => {
+                        if (canvas.classList.contains("hidden")) {
+                            canvas.classList.remove("hidden");
+                            button.innerHTML = "<ion-icon name=\"close-circle-outline\"></ion-icon>"
+                        }
+                        else {
+                            canvas.classList.add("hidden");
+                            button.innerHTML = "<ion-icon name=\"add-circle-outline\"></ion-icon>";
+                        }
+                    });
+
+                    container.appendChild(canvas);
+                    container.appendChild(button);
+                    document.querySelector("#result").appendChild(container);
 
                     boundingX = x;
                     vCount++;
