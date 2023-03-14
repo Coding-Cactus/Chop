@@ -18,17 +18,16 @@
     document.addEventListener("paste", e => {
         e.preventDefault();
 
-        const item = (e.clipboardData || e.originalEvent.clipboardData).items[0];
+        const file = (e.clipboardData || e.originalEvent.clipboardData).files[0];
 
-        if (item.kind === "file") {
+        if (file !== undefined) {
             const fr = new FileReader();
-            const blob = item.getAsFile();
 
             fr.onload = () => {
-                display(fr, { value: "" });
+                display(fr, { value: file.name });
             };
 
-            fr.readAsDataURL(blob);
+            fr.readAsDataURL(file);
         }
     });
 
