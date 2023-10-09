@@ -1,7 +1,7 @@
 {
     const pdfjsLib = window['pdfjs-dist/build/pdf']
 
-    pdfjsLib.GlobalWorkerOptions.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
 
     document.querySelector("#img-upload").addEventListener("change", (e) => {
         const target = e.target || window.event.srcElement;
